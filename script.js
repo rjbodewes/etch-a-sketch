@@ -36,12 +36,20 @@ slider.addEventListener("input", function() {
     console.log(guideValue);
     
     for (i = 1; i <= convertSize(guideValue); i++) {
-        const cell = document.createElement("div"); 
+        const cell = document.createElement("pen"); 
+        cell.addEventListener('mouseover', hoverColor);
         cell.innerHTML = ``;
+        cell.setAttribute("id", `${i}`)
         container.appendChild(cell);
     };
+
+    
 
 
 
 });
 
+function hoverColor($event) {
+    const item = $event.target;
+    item.style.opacity = `0`;
+  }
