@@ -1,20 +1,35 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+#body {
+  height: 100vh;
+}
+
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    /*grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto;*/
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
     grid-gap: 0px;
-    background-color: #ffffff;
     padding: 0px;
     width: 400px;
     height: 400px;
-    background-image: url("Donald.jpg");
+    
     cursor: crosshair;
+    background-image: url("Donald.jpg");
+    background-size: cover;
   }
   
   .grid-container > pen {
+    display: flex;
+
     background-color: rgba(0, 0, 0);
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid rgba(0, 0, 0);
     text-align: center;
-    font-size: 30px;
+    
     
   }
 

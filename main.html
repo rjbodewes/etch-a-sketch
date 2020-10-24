@@ -8,14 +8,22 @@
 </head>
     <body>
         <div class="slidecontainer">
-            <input type="range" min="0" max="4" value="1" class="slider" id="mySlider"></input>    
+            <input type="range" min="1" max="3" value="2" class="slider" id="mySlider"></input>    
         </div>
         <div class="buttons">
-            <button>reset</button>
+            <button id = "resetbtn">reset</button>
             <button>go crazy!</button>
-            <button>black and white</button>
+            <button id = "bnw">black and white</button>
+
+            <form name="presidentForm">
+                <legend>choose ur guy</legend>
+                <input type="radio" value="trump" name="president" checked></input>
+                <label for="trump">donald</label>
+                <input type="radio" value="biden" name="president"></input>
+                <label for="biden">not donald</label>
+            </form>
         </div>
-        <div class="grid-container" id = "container" >
+        <div class="grid-container" id = "container">
             
         </div>
         <script src="script.js"></script>
