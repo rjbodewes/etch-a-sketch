@@ -8,9 +8,9 @@
 }
 
 .grid-container {
+
     display: grid;
-    /*grid-template-columns: auto auto auto auto;
-    grid-template-rows: auto;*/
+   
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
     grid-gap: 0px;
@@ -21,6 +21,10 @@
     cursor: crosshair;
     background-image: url("Donald.jpg");
     background-size: cover;
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(158, 45, 45);
   }
   
   .grid-container > pen {

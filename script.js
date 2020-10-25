@@ -2,8 +2,9 @@ const container = document.getElementById("container");
 var slider = document.getElementById("mySlider");
 const resetbtn = document.querySelector("#resetbtn");
 const bnw = document.querySelector("#bnw");
+const eraser = document.querySelector("#eraser");
 var bg = "trump";
-
+currento = "0";
 
 
 
@@ -13,8 +14,12 @@ function convertSize(x) {
         return 2;
     } else if (x == 2) {
         return 4; 
-    } else {
+    } else if (x == 3) {
         return 8;
+    } else  if (x == 4){
+        return 16;
+    } else {
+        return 22;
     };
 };
 
@@ -51,6 +56,16 @@ function setBackground(bg) {
     };
 }
 
+function changeEraser(currento) {
+    if (currento == "1" || currento == null) {
+        return "0";
+    } else {
+        return "1";
+    };
+};
+
+
+
 // determines the color of the background 
 function changeColor() {
     if (document.getElementById("container").style.filter == `grayscale(100%)`) {
@@ -61,7 +76,7 @@ function changeColor() {
 };
 
 /* generates the first grid*/
-generateGrid(2);
+generateGrid(3);
 container.style.backgroundImage = setBackground(bg);
 
 
@@ -83,9 +98,6 @@ slider.addEventListener("input", function() {
     generateGrid(guideValue);
 
     
-    
-
-
 });
 
 
@@ -94,8 +106,16 @@ slider.addEventListener("input", function() {
 
 function hoverColor($event) {
     const item = $event.target;
+
+
+   
+
+
+
     
-    item.style.opacity = `0`;
+    item.style.opacity = "0";
+
+    
   }
 
 
@@ -108,6 +128,11 @@ resetbtn.addEventListener('click', function() {
 bnw.addEventListener('click', function() {
     changeColor();
 });
+
+eraser.addEventListener('click', function() {
+    changeEraser(currento);
+});
+
 
 
 /*checks radio value*/
